@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crestwood Academy | Premier Co-Educational Secondary School in Nigeria</title>
+  <meta name="description" content="Where academic excellence meets a modern, seamless school experience for every Crestwood family." />
+  <meta property="og:title" content="Crestwood Academy | Premier Co-Educational Secondary School in Nigeria" />
+  <meta property="og:description" content="Where academic excellence meets a modern, seamless school experience for every Crestwood family." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Outfit:wght@500;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Custom Plain CSS (No Tailwind, No Preprocessors) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       Site Header & Navigation
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <div class="brand-icon">C</div>
+        <div class="brand-name">
+          <span class="crestwood">CRESTWOOD</span>
+          <span class="academy">Academy</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#pathways" class="nav-link" data-scroll-to="pathways">Programs</a>
+        <a href="#infrastructure" class="nav-link" data-scroll-to="infrastructure">Athletics</a>
+        <a href="#campus-life" class="nav-link" data-scroll-to="campus-life">Campus Life</a>
+        <a href="#testimonials" class="nav-link" data-scroll-to="testimonials">Voices</a>
+        <a href="#cta" class="nav-link" data-scroll-to="cta">Admissions</a>
+
+        <!-- Portal Dropdown Wrapper -->
+        <div class="portal-dropdown-wrapper" id="desktopPortalWrapper">
+          <button class="portal-btn" id="desktopPortalBtn" aria-haspopup="true" aria-expanded="false">
+            <span>PORTAL LOGIN</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="portal-menu" id="desktopPortalMenu" role="menu">
+            <button class="portal-menu-item" data-open-modal="portal" data-modal-payload="Student Login" role="menuitem">
+              <span>Student Login</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button class="portal-menu-item" data-open-modal="portal" data-modal-payload="Parent/Guardian Login" role="menuitem">
+              <span>Parent/Guardian Login</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button class="portal-menu-item" data-open-modal="portal" data-modal-payload="Teacher Login" role="menuitem">
+              <span>Teacher Login</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button class="portal-menu-item" data-open-modal="portal" data-modal-payload="Admin Login" role="menuitem">
+              <span>Admin Login</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line line-1"></span>
+        <span class="hamburger-line line-2"></span>
+        <span class="hamburger-line line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Backdrop & Drawer -->
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-inner">
+      <!-- Mobile Portal Accordion -->
+      <div class="mobile-portal-section" id="mobilePortalSection">
+        <button class="mobile-portal-btn" id="mobilePortalBtn">
+          <div class="label-group">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>PORTAL LOGIN</span>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-portal-menu">
+          <button class="mobile-portal-item" data-open-modal="portal" data-modal-payload="Student Login">
+            <span>Student Login</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button class="mobile-portal-item" data-open-modal="portal" data-modal-payload="Parent/Guardian Login">
+            <span>Parent/Guardian Login</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button class="mobile-portal-item" data-open-modal="portal" data-modal-payload="Teacher Login">
+            <span>Teacher Login</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button class="mobile-portal-item" data-open-modal="portal" data-modal-payload="Admin Login">
+            <span>Admin Login</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <button class="mobile-nav-link" data-scroll-to="pathways">
+          <span>Programs</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="mobile-nav-link" data-scroll-to="infrastructure">
+          <span>Athletics</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="mobile-nav-link" data-scroll-to="campus-life">
+          <span>Campus Life</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="mobile-nav-link" data-scroll-to="testimonials">
+          <span>Voices</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        <button class="mobile-nav-link" data-scroll-to="cta">
+          <span>Admissions</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </nav>
+
+      <div class="mobile-contact-bar">
+        <span>Admissions Hotline:</span>
+        <a href="tel:5553492810" class="hotline" style="text-decoration: underline;">(555) 349-2810</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Background Decorative Tennis Swirl Doodles -->
+    <svg class="hero-doodle" viewBox="0 0 160 100" fill="none" stroke="black" stroke-width="2.5" stroke-dasharray="6 6" stroke-linecap="round">
+      <path d="M10 80 C 40 10, 80 90, 120 40 C 140 15, 155 35, 150 60" />
+      <circle cx="10" cy="80" r="4" fill="black" fill-opacity="0.5" />
+      <circle cx="150" cy="60" r="4" fill="black" fill-opacity="0.5" />
+    </svg>
+
+    <div class="container hero-content">
+      <!-- Main Display Title -->
+      <h1 class="hero-title">
+        CRESTWOOD ACADEMY
+      </h1>
+
+      <!-- Editorial Subtitle -->
+      <p class="hero-subtitle">
+        Where academic excellence meets a modern, seamless school experience for every Crestwood family.
+      </p>
+
+      <!-- Centerpiece Visual Card with Badges -->
+      <div class="hero-card-wrapper">
+        <!-- Floating Tennis Ball: Top-Left -->
+        <div class="floating-ball top-left" data-open-modal="video" title="Campus Tour">
+          <img src="assets/tennis-ball.png" alt="Tennis Ball" />
+        </div>
+
+        <!-- Floating Tennis Ball: Bottom-Right -->
+        <div class="floating-ball bottom-right" data-open-modal="tour" title="Schedule Tour">
+          <img src="assets/tennis-ball.png" alt="Tennis Ball" />
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=1600&auto=format&fit=crop"
+            alt="Elite student-athlete smiling on blue tennis court in championship uniform with tennis racket"
+            class="hero-img"
+          />
+          <div class="hero-vignette"></div>
+
+          <!-- Top-Right Coral Star Sparkle -->
+          <svg class="hero-star" viewBox="0 0 24 24" fill="none" stroke="#EB4E27" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"></path>
+          </svg>
+
+          <!-- Academic Session Badge -->
+          <div class="hero-badge">
+            <span class="hero-badge-top">2025/2026 ACADEMIC SESSION</span>
+            <span class="hero-badge-bottom">
+              <span class="hero-pulse-dot"></span>
+              98% WAEC &amp; JAMB Success Rate
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hero-cta-group">
+        <button class="btn-primary" data-open-modal="apply">
+          <span>APPLY FOR ADMISSION</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <button class="btn-secondary" data-open-modal="prospectus">
+          Explore Our Programs
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Marquee Ticker
+       ======================================================================== -->
+  <div class="marquee-ticker" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- Item Set 1 -->
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">PREP SCHOOL</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">STATE-OF-THE-ART HARDCOURTS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">CHAMPIONSHIP MINDSET</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">D1 TRAINING FACILITY</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">CLASSICAL ACADEMICS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">ELITE COLLEGE RECRUITING</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">INDOOR &amp; CLAY COURTS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">BIOMECHANICS LAB</span></div>
+
+      <!-- Item Set 2 (Seamless Infinite Repeat) -->
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">PREP SCHOOL</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">STATE-OF-THE-ART HARDCOURTS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">CHAMPIONSHIP MINDSET</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">D1 TRAINING FACILITY</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">CLASSICAL ACADEMICS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">ELITE COLLEGE RECRUITING</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">INDOOR &amp; CLAY COURTS</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span class="marquee-text">BIOMECHANICS LAB</span></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Pathways Section (Our Programs)
+       ======================================================================== -->
+  <section class="pathways-section" id="pathways">
+    <div class="container">
+      <div style="max-width: 48rem;">
+        <span class="section-eyebrow blue">OUR PROGRAMS</span>
+        <h2 class="section-title">DESIGNED FOR NIGERIA'S NEXT GENERATION OF LEADERS</h2>
+        <p class="section-desc">
+          At Crestwood Academy, we combine strong academics with a modern portal that keeps students, parents, and teachers connected every step of the way.
+        </p>
+      </div>
+
+      <!-- Mobile Carousel Switcher Tabs -->
+      <div class="mobile-tabs">
+        <div class="tab-pill-group">
+          <button class="tab-pill pathway-tab-btn active" data-index="0">Academics</button>
+          <button class="tab-pill pathway-tab-btn" data-index="1">Activities</button>
+          <button class="tab-pill pathway-tab-btn" data-index="2">Portal</button>
+        </div>
+      </div>
+
+      <!-- Mobile Interactive Card Container -->
+      <div class="mobile-carousel-wrapper">
+        <div id="pathwayCardMobile" class="pathway-card light">
+          <!-- Populated by JS -->
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot pathway-dot-btn active" data-index="0"></span>
+          <span class="carousel-dot pathway-dot-btn" data-index="1"></span>
+          <span class="carousel-dot pathway-dot-btn" data-index="2"></span>
+        </div>
+      </div>
+
+      <!-- Desktop 3-Card Grid Layout -->
+      <div class="desktop-3col-grid">
+        <!-- Card 1: WAEC & JAMB Preparation -->
+        <div class="pathway-card light">
+          <div>
+            <span class="cat-label">Academic Excellence</span>
+            <h3 class="card-title">WAEC &amp; JAMB Preparation</h3>
+            <p class="card-body">
+              A curriculum aligned with the Nigerian secondary school syllabus, preparing students for WAEC, NECO, and JAMB with clear, trackable results.
+            </p>
+          </div>
+          <div class="card-btn" data-open-modal="prospectus">
+            <span>VIEW CURRICULUM</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 2: Inter-House Sports & Clubs (Dark Card with Lime Accent) -->
+        <div class="pathway-card dark">
+          <div>
+            <span class="cat-label" style="color: var(--color-lime);">Sports &amp; Extracurriculars</span>
+            <h3 class="card-title">Inter-House Sports &amp; Clubs</h3>
+            <p class="card-body">
+              Balanced development through inter-house sports, clubs, and co-curricular activities that build character alongside academics.
+            </p>
+          </div>
+          <div class="card-btn" data-open-modal="prospectus">
+            <span>EXPLORE ACTIVITIES</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 3: Student, Parent & Teacher Access -->
+        <div class="pathway-card light">
+          <div>
+            <span class="cat-label">Digital School Portal</span>
+            <h3 class="card-title">Student, Parent &amp; Teacher Access</h3>
+            <p class="card-body">
+              A secure online portal where students check results, parents track progress and pay school fees, and teachers manage grading — all in one place.
+            </p>
+          </div>
+          <div class="card-btn" data-open-modal="portal">
+            <span>ACCESS PORTAL</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Campus Life Section (Deep Indigo Bento Grid)
+       ======================================================================== -->
+  <section class="campus-life-section" id="campus-life">
+    <div class="container">
+      <div class="header-row">
+        <div>
+          <span class="section-eyebrow lime">SCHOOL LIFE</span>
+          <h2 class="section-title" style="color: #FFF;">A VIBRANT LEARNING COMMUNITY</h2>
+        </div>
+
+        <button class="btn-orange" data-open-modal="tour">
+          <span>CAMPUS TOUR</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Campus Life Bento Layout -->
+      <div class="mobile-campus-bento">
+        <!-- Card 1: Modern Classroom Blocks Photo Card -->
+        <div class="bento-img-card mobile-h-1">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop"
+            alt="Modern Classroom Blocks"
+          />
+          <div class="bento-img-overlay"></div>
+          <div class="bento-img-caption">
+            <span class="bento-caption-tag">ACADEMIC BLOCKS</span>
+            <h3 class="bento-caption-title">MODERN CLASSROOM BLOCKS</h3>
+            <p class="bento-caption-p">
+              Comfortable, well-equipped classrooms and study spaces designed for focused learning and collaboration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Split Stats Row -->
+        <div class="mobile-stats-row">
+          <!-- 15:1 Ratio -->
+          <div class="stat-bento-card lime">
+            <div class="stat-icon-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EB4E27" stroke-width="2">
+                <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="stat-number-big">15:1</span>
+              <span class="stat-label-small">STUDENT TEACHER<br />RATIO</span>
+            </div>
+            <div class="stat-footer-tag">Close Mentorship</div>
+          </div>
+
+          <!-- 100% Qualified -->
+          <div class="stat-bento-card orange">
+            <div class="stat-icon-circle" style="background: rgba(255,255,255,0.2); color: #FFF;">★</div>
+            <div>
+              <span class="stat-number-big">100%</span>
+              <span class="stat-label-small">QUALIFIED TEACHING<br />STAFF</span>
+            </div>
+            <div class="stat-footer-tag">Certified Faculty</div>
+          </div>
+        </div>
+
+        <!-- Card 4: Science & Computer Lab Photo Card -->
+        <div class="bento-img-card mobile-h-2">
+          <img
+            src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1200&auto=format&fit=crop"
+            alt="Science & Computer Lab"
+          />
+          <div class="bento-img-overlay"></div>
+          <div class="bento-img-caption">
+            <span class="bento-caption-tag">INNOVATION</span>
+            <h3 class="bento-caption-title">SCIENCE &amp; COMPUTER LAB</h3>
+            <p class="bento-caption-p">
+              Fostering curiosity and scientific rigor with modern lab equipment and dedicated teacher mentorship.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop 12-Column Bento Grid Layout -->
+      <div class="desktop-bento-grid">
+        <!-- Card 1: Modern Classroom Blocks (Span 7 cols) -->
+        <div class="desktop-bento-card img-block col-span-7" style="min-height: 340px;">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop"
+            alt="Modern Classroom Blocks"
+          />
+          <div class="overlay"></div>
+          <div class="caption">
+            <h3 class="title">MODERN CLASSROOM BLOCKS</h3>
+            <p class="p">
+              Comfortable, well-equipped classrooms and study spaces designed for focused learning and collaboration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: 15:1 Ratio (Span 5 cols) -->
+        <div class="desktop-bento-card stat-lime col-span-5">
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EB4E27" stroke-width="2">
+              <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"></path>
+            </svg>
+          </div>
+          <div style="margin-top: auto; margin-bottom: auto; padding: 1rem 0;">
+            <span style="display: block; font-weight: 900; font-size: 2.6rem; text-transform: uppercase; letter-spacing: -0.025em; line-height: 1.05;">
+              15:1 STUDENT<br />TEACHER RATIO
+            </span>
+          </div>
+          <p style="font-size: 0.875rem; font-weight: 600; max-width: 20rem; line-height: 1.4;">
+            Personalized attention for every student to support academic excellence and steady result improvement.
+          </p>
+        </div>
+
+        <!-- Card 3: 100% Qualified Staff (Span 5 cols) -->
+        <div class="desktop-bento-card stat-orange col-span-5">
+          <span style="font-weight: 900; font-size: 5.5rem; line-height: 1; letter-spacing: -0.025em;">
+            100%
+          </span>
+          <span style="font-size: 1.25rem; font-weight: 700; margin-top: 0.5rem;">
+            Qualified Teaching Staff
+          </span>
+        </div>
+
+        <!-- Card 4: Science & Computer Lab (Span 7 cols) -->
+        <div class="desktop-bento-card img-block col-span-7" style="min-height: 220px;">
+          <img
+            src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1200&auto=format&fit=crop"
+            alt="Science & Computer Lab"
+          />
+          <div class="overlay"></div>
+          <div class="caption">
+            <h3 class="title">SCIENCE &amp; COMPUTER LAB</h3>
+            <p class="p">
+              Fostering curiosity and scientific rigor with modern lab equipment and dedicated teacher mentorship.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Infrastructure Section (Campus Facilities)
+       ======================================================================== -->
+  <section class="infrastructure-section" id="infrastructure">
+    <div class="container">
+      <div class="infra-grid">
+        <!-- Media Column -->
+        <div class="infra-media-card">
+          <img
+            src="https://images.unsplash.com/photo-1560012057-4372e14c5085?q=80&w=1200&auto=format&fit=crop"
+            alt="RP Championship Center indoor tennis courts facility with blue hardcourts"
+          />
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%, rgba(0,0,0,0.2) 100%); pointer-events: none;"></div>
+
+          <!-- Top-Left Badge -->
+          <div class="infra-tag-badge">
+            <span>CRESTWOOD ASSEMBLY HALL</span>
+          </div>
+
+          <!-- Top-Right Tennis Ball Graphic Badge -->
+          <div class="infra-ball-badge">
+            <div class="tennis-ball-badge">
+              <svg viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="48" fill="#D4F826" stroke="#000" stroke-width="4"></circle>
+                <path d="M 28 4 C 42 28 42 72 28 96" stroke="#000" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M 72 4 C 58 28 58 72 72 96" stroke="#000" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M 50 25 L 50 75 M 25 50 L 75 50" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-opacity="0.85"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Video Pill Trigger -->
+          <button class="infra-video-pill" data-open-modal="video">
+            <div class="play-circle">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#FFF" stroke="#FFF">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+            <span>Preview Campus Tour Video</span>
+          </button>
+        </div>
+
+        <!-- Text & Stats Column -->
+        <div>
+          <span class="section-eyebrow orange">OUR CAMPUS</span>
+          <h2 class="section-title">MODERN LEARNING INFRASTRUCTURE</h2>
+          <p class="section-desc">
+            Our campus features modern classrooms, a well-equipped science and computer laboratory, a school library, and dedicated sports facilities for a complete learning experience.
+          </p>
+
+          <!-- 3 Stats Row -->
+          <div class="infra-stats-grid">
+            <div class="infra-stat-box">
+              <div class="infra-stat-number">24</div>
+              <div class="infra-stat-label">Classrooms</div>
+            </div>
+            <div class="infra-stat-box">
+              <div class="infra-stat-number">10</div>
+              <div class="infra-stat-label">Acres Campus Size</div>
+            </div>
+            <div class="infra-stat-box">
+              <div class="infra-stat-number">100%</div>
+              <div class="infra-stat-label">Qualified Teaching Staff</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="infra-actions">
+            <button class="btn-blue" data-open-modal="tour">
+              <span>TOUR OUR CAMPUS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <button class="btn-secondary" data-open-modal="video">
+              Watch Campus Video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Testimonials Section (Electric Lime)
+       ======================================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-eyebrow dark">STUDENT &amp; PARENT VOICES</span>
+        <h2 class="section-title">WHAT THE CRESTWOOD FAMILY SAYS</h2>
+      </div>
+
+      <!-- Mobile Filter Tabs -->
+      <div class="mobile-tabs" style="border-top: none; margin-top: 1.5rem;">
+        <div class="tab-pill-group">
+          <button class="tab-pill test-tab-btn active" data-index="0">STUDENT</button>
+          <button class="tab-pill test-tab-btn" data-index="1">PARENT</button>
+        </div>
+      </div>
+
+      <!-- Mobile Card Switcher -->
+      <div class="mobile-carousel-wrapper">
+        <div id="testimonialCardMobile" class="testimonial-card">
+          <!-- Populated by JS -->
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot test-dot-btn active" data-index="0"></span>
+          <span class="carousel-dot test-dot-btn" data-index="1"></span>
+        </div>
+      </div>
+
+      <!-- Desktop 2 Testimonials Grid -->
+      <div class="desktop-testimonials-grid">
+        <!-- Card 1: Student -->
+        <div class="testimonial-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span class="test-badge">STUDENT</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EB4E27" stroke-width="2.2" stroke-linecap="round">
+                <path d="M4 7H18M4 12H15M4 17H20"></path>
+                <circle cx="19" cy="7" r="1.5" fill="#EB4E27"></circle>
+                <circle cx="16" cy="12" r="1.5" fill="#EB4E27"></circle>
+              </svg>
+            </div>
+            <blockquote class="test-quote">
+              &ldquo;Crestwood Academy gave me a strong academic foundation and the confidence to gain admission into my dream university while graduating at the top of my class.&rdquo;
+            </blockquote>
+          </div>
+          <div class="test-author-info">
+            <div class="test-author-name">Chidinma Okafor</div>
+            <div class="test-author-role">Class of 2024 / Admitted to University of Lagos</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Parent Perspective -->
+        <div class="testimonial-card">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span class="test-badge">PARENT PERSPECTIVE</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EB4E27" stroke-width="2.2" stroke-linecap="round">
+                <path d="M4 7H18M4 12H15M4 17H20"></path>
+                <circle cx="19" cy="7" r="1.5" fill="#EB4E27"></circle>
+                <circle cx="16" cy="12" r="1.5" fill="#EB4E27"></circle>
+              </svg>
+            </div>
+            <blockquote class="test-quote">
+              &ldquo;We chose Crestwood Academy for the quality of teaching, but we stay because of the caring community and how easy it is to track our child's progress online. Our daughter has grown immensely in both confidence and academic performance.&rdquo;
+            </blockquote>
+          </div>
+          <div class="test-author-info">
+            <div class="test-author-name">The Okonkwo Family</div>
+            <div class="test-author-role">Parents of SS2 Student</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Dispatch Section (Crestwood Bulletin / School News)
+       ======================================================================== -->
+  <section class="dispatch-section" id="bulletin">
+    <div class="container">
+      <div class="header-row">
+        <div>
+          <span class="section-eyebrow orange">SCHOOL NEWS</span>
+          <h2 class="section-title">CRESTWOOD BULLETIN</h2>
+        </div>
+
+        <button class="bulletin-all-btn" onclick="openStoryById('waec-results-2026')">
+          <span>VIEW ALL NEWS</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile News Carousel -->
+      <div style="margin-top: 1.5rem;" class="mobile-carousel-wrapper">
+        <div class="mobile-news-controls">
+          <span id="newsIndexText" style="font-size: 0.75rem; font-weight: 700; color: var(--color-gray-500);">
+            Story 1 of 3
+          </span>
+          <div style="display: flex; gap: 0.375rem;">
+            <button class="carousel-arrow-btn" id="newsPrevBtn" aria-label="Previous story">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="carousel-arrow-btn" id="newsNextBtn" aria-label="Next story">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="newsCardMobile">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="carousel-dots">
+          <span class="carousel-dot news-dot-btn active" data-index="0"></span>
+          <span class="carousel-dot news-dot-btn" data-index="1"></span>
+          <span class="carousel-dot news-dot-btn" data-index="2"></span>
+        </div>
+      </div>
+
+      <!-- Desktop 3-News Grid -->
+      <div class="desktop-news-grid">
+        <!-- Story 1: WAEC Results -->
+        <div class="news-card" onclick="openStoryById('waec-results-2026')">
+          <div class="news-card-img">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Crestwood Students Excel in 2026 WAEC Results" />
+            <span class="news-card-tag">Academics</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-date">OCTOBER 14, 2026</span>
+            <h3 class="news-title">Crestwood Students Excel in 2026 WAEC Results</h3>
+          </div>
+          <div class="news-card-footer">
+            <div class="news-read-more">
+              <span>Read Full Story</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2: Science Competition -->
+        <div class="news-card" onclick="openStoryById('science-competition-2026')">
+          <div class="news-card-img">
+            <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=800&auto=format&fit=crop" alt="Crestwood Academic Team Places 3rd in State Science Competition" />
+            <span class="news-card-tag">Academics</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-date">SEPTEMBER 28, 2026</span>
+            <h3 class="news-title">Crestwood Academic Team Places 3rd in State Science Competition</h3>
+          </div>
+          <div class="news-card-footer">
+            <div class="news-read-more">
+              <span>Read Full Story</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3: Computer Lab -->
+        <div class="news-card" onclick="openStoryById('computer-lab-2026')">
+          <div class="news-card-img">
+            <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800&auto=format&fit=crop" alt="New Computer Laboratory Officially Opens at Crestwood Academy" />
+            <span class="news-card-tag">Campus Facilities</span>
+          </div>
+          <div class="news-card-body">
+            <span class="news-date">SEPTEMBER 05, 2026</span>
+            <h3 class="news-title">New Computer Laboratory Officially Opens at Crestwood Academy</h3>
+          </div>
+          <div class="news-card-footer">
+            <div class="news-read-more">
+              <span>Read Full Story</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CTA Banner (Warm Vermilion)
+       ======================================================================== -->
+  <section class="cta-banner" id="cta">
+    <!-- Top-Left Sparkle -->
+    <svg class="cta-sparkle top-left" viewBox="0 0 24 24" fill="none" stroke="#FDE047" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"></path>
+    </svg>
+
+    <!-- Bottom-Right Sparkle -->
+    <svg class="cta-sparkle bottom-right" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 2C12 7.5 7.5 12 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"></path>
+    </svg>
+
+    <div class="container" style="max-width: 56rem; position: relative; z-index: 10;">
+      <span class="cta-eyebrow">JOIN THE LEGACY</span>
+      <h2 class="cta-title">
+        YOUR ROAD TO<br />
+        CHAMPIONSHIP<br />
+        SUCCESS BEGINS HERE
+      </h2>
+      <p class="cta-subtitle">
+        Application deadlines for the Fall 2027 academic term close soon. Take your first step today.
+      </p>
+
+      <div class="cta-btn-group">
+        <button class="btn-primary" style="padding: 0.875rem 2rem; font-size: 0.875rem;" data-open-modal="apply">
+          <span>APPLY NOW</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <button class="btn-secondary" style="padding: 0.875rem 2rem; font-size: 0.875rem;" data-open-modal="prospectus">
+          Request Prospectus Pack
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Socials -->
+        <div>
+          <div class="brand-logo inverted">
+            <div class="brand-icon">C</div>
+            <div class="brand-name">
+              <span class="crestwood">CRESTWOOD</span>
+              <span class="academy">Academy</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Crestwood Academy is a premier co-educational school dedicated to academic excellence, moral leadership, and comprehensive student development.
+          </p>
+
+          <!-- Socials -->
+          <div class="social-links">
+            <a href="#instagram" class="social-circle" aria-label="Instagram" data-open-modal="tour">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#youtube" class="social-circle" aria-label="YouTube" data-open-modal="video">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#podcast" class="social-circle" aria-label="Podcast / Broadcast" data-open-modal="video">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+              </svg>
+            </a>
+            <a href="#twitter" class="social-circle" aria-label="Twitter / X" data-open-modal="prospectus">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div>
+          <h4 class="footer-col-title">Programs</h4>
+          <ul class="footer-link-list">
+            <li><button class="footer-link-btn" data-scroll-to="pathways">Honors Academics</button></li>
+            <li><button class="footer-link-btn" data-scroll-to="pathways">Science &amp; Technology</button></li>
+            <li><button class="footer-link-btn" data-scroll-to="pathways">Arts &amp; Humanities</button></li>
+            <li><button class="footer-link-btn" data-scroll-to="pathways">Commercial &amp; Business</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Admissions -->
+        <div>
+          <h4 class="footer-col-title">Admissions</h4>
+          <ul class="footer-link-list">
+            <li><button class="footer-link-btn" data-open-modal="apply">How to Apply</button></li>
+            <li><button class="footer-link-btn" data-open-modal="prospectus">Tuition &amp; Fees</button></li>
+            <li><button class="footer-link-btn" data-open-modal="tour">Schedule a Visit</button></li>
+            <li><button class="footer-link-btn" data-open-modal="prospectus">Admissions Guide</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Crestwood Info -->
+        <div>
+          <h4 class="footer-col-title">Crestwood Info</h4>
+          <ul class="footer-link-list">
+            <li><button class="footer-link-btn" data-scroll-to="infrastructure">Campus Facilities</button></li>
+            <li><button class="footer-link-btn" data-open-modal="tour">Teaching Staff Directory</button></li>
+            <li><button class="footer-link-btn" data-open-modal="portal">Examination Council Portal</button></li>
+            <li><button class="footer-link-btn" data-open-modal="tour">Admissions Office Contact</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sub-Footer -->
+      <div class="sub-footer">
+        <p>&copy; 2026 Crestwood Academy. All Rights Reserved.</p>
+        <div class="sub-footer-links">
+          <button class="sub-footer-btn" data-open-modal="prospectus">Privacy Policy</button>
+          <button class="sub-footer-btn" data-open-modal="prospectus">Terms of Enrollment</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Container (Dynamically rendered by vanilla JS) -->
+  <div id="modalContainer" class="hidden" aria-modal="true" role="dialog"></div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
